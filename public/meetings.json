@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "summary": "Meeting 1",
+    "url": "url1",
+    "category": "meeting",
+    "start": "2024-06-16T17:15:46.534Z",
+    "end": "2024-06-16T18:15:46.534Z"
+  },
+  {
+    "id": 2,
+    "summary": "Meeting 2",
+    "url": "url2",
+    "category": "open_session",
+    "start": "2024-06-16T16:15:46.534Z",
+    "end": "2024-06-16T17:15:46.534Z"
+  },
+  {
+    "id": 3,
+    "summary": "Meeting 3",
+    "url": "url3",
+    "category": "meeting",
+    "start": "2024-06-16T15:15:46.534Z",
+    "end": "2024-06-16T16:15:46.534Z"
+  }
+]

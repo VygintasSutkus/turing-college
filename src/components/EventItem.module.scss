@@ -1,0 +1,104 @@
+.event {
+  --ui-bg-color: var(--ui-black-22);
+  --ui-title-color: var(--ui-gray-92);
+  --ui-type-color: var(--ui-gray-50);
+  --ui-live-color: var(--ui-yellow);
+  --ui-start-color: var(--ui-gray-92);
+  --ui-end-color: var(--ui-gray-50);
+
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background-color: var(--ui-bg-color);
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover {
+    --ui-bg-color: var(--ui-black-26);
+  }
+
+  .summary {
+    flex-grow: 1;
+    .title {
+      color: var(--ui-title-color);
+    }
+
+    .type {
+      font-size: 11px;
+      font-weight: 500;
+      line-height: 1.5;
+      letter-spacing: 0.5px;
+      color: var(--ui-type-color);
+
+      &.meeting {
+        --ui-type-color: var(--ui-yellow-2);
+      }
+
+      &.review {
+        --ui-type-color: var(--ui-light-purple);
+      }
+    }
+  }
+
+  .liveTitle {
+    width: 24px;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.25;
+    color: var(--ui-live-color)
+  }
+
+  .date {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.25;
+
+    .startTime {
+      color: var(--ui-start-color)
+    }
+    .endTime {
+      color: var(--ui-end-color)
+    }
+
+    .overdueTitle {
+      color: var(--ui-red);
+    }
+  }
+
+  &.live {
+    --ui-bg-color: var(--ui-yellow-trans-55);
+
+    &:hover {
+      --ui-bg-color: var(--ui-yellow-trans-60);
+    }
+
+    .summary .type {
+    --ui-type-color: var(--ui-gray-92-trans);
+
+      &.meeting, &.review {
+        --ui-type-color: var(--ui-gray-92-trans);
+      }
+    }
+
+    .date {
+      opacity: 0.5;
+      .startTime, .endTime {
+        --ui-start-color: var(--ui-gray-92);
+        --ui-end-color: var(--ui-gray-92);
+      }
+    }
+
+  }
+
+  &.past {
+    opacity: 0.4;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+

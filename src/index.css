@@ -1,0 +1,80 @@
+:root {
+  --ui-black-12: #202128;
+  --ui-black-15: #292A32;
+  --ui-black-18: #2E3038;
+  --ui-black-22: #373842;
+  --ui-black-26: #41424B;
+  --ui-gray-50: #7A7C85;
+  --ui-gray-92: #E0E0E1;
+  --ui-gray-92-trans: hsla(240, 2%, 88%, 0.65);
+  --ui-purple: #673AFF;
+  --ui-light-purple: #808CF4;
+  --ui-yellow: #D79053;
+  --ui-yellow-trans-60: hsla(28, 62%, 58%, 0.6);
+  --ui-yellow-trans-55: hsla(28, 62%, 58%, 0.55);
+  --ui-yellow-2: #B08B69;
+  --ui-red: #CA4365;
+
+
+
+  font-family: Roboto, system-ui, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: var(--ui-black-12);
+  color: var(--ui-gray-92);
+}
+
+#root {
+  height: 100%;
+}
+
+h2 {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.25;
+  text-align: center;
+}
+
+.button {
+  font-family: Roboto, system-ui, Arial, sans-serif;
+  display: block;
+  background: var(--ui-purple);
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: none;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--ui-gray-92);
+  cursor: pointer;
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  &:hover {
+    background: var(--ui-light-purple);
+  }
+}
+

@@ -1,0 +1,63 @@
+dialog::backdrop {
+  background-color: hsla(0, 0%, 8%, 0.7);
+}
+
+dialog {
+  font-family: Roboto, system-ui, Arial, sans-serif;
+  width: 361px;
+  box-shadow: 0 0 60px 0 hsla(0, 0%, 0%, 0.35);
+  border: 1px solid var(--ui-black-18);
+  background: var(--ui-black-12);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 24px;
+  position: relative;
+  color: var(--ui-gray-92);
+
+  @media only screen and (min-width: 768px) {
+    width: 600px;
+  }
+
+  h2 {
+    text-align: left;
+    margin: 0;
+  }
+
+  .eventTime {
+    color: var(--ui-gray-50);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+  }
+
+  .startText {
+    color: var(--ui-gray-50);
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16.25px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+    &.live {
+      color: var(--ui-yellow);
+    }
+  }
+
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 33px;
+  line-height: 24px;
+  font-size: 24px;
+  text-align: center;
+  color: #7C7D83;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--ui-gray-92-trans);
+  }
+}
