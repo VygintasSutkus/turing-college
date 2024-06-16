@@ -2,7 +2,7 @@ import {Event} from "../App.tsx";
 import {ReviewState} from "../types.ts";
 
 export function pad(n: number) {
-    return n<10 ? '0'+n : n;
+    return n<10 ? "0"+n : n;
 }
 
 export function getTimeText (date: Date) {
