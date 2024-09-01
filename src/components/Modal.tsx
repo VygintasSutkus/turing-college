@@ -16,9 +16,9 @@ export const Modal: React.FC<ModalProps> = (props) => {
 
     const ref = useRef<HTMLDialogElement>(null);
 
-    useEffect(() => {
-        ref.current?.showModal();
-    }, []);
+    // useEffect(() => {
+    //     ref.current?.showModal();
+    // }, []);
 
     useEffect(() => {
         let interval = null;
