@@ -16,9 +16,9 @@ export const Modal: React.FC<ModalProps> = (props) => {
 
     const ref = useRef<HTMLDialogElement>(null);
 
-    // useEffect(() => {
-    //     ref.current?.showModal();
-    // }, []);
+    useEffect(() => {
+        ref.current?.showModal();
+    }, []);
 
     useEffect(() => {
         let interval = null;
@@ -27,7 +27,7 @@ export const Modal: React.FC<ModalProps> = (props) => {
             }, 1000 * 60);
 
         return () => clearInterval(interval);
-    }, [now]);
+    }, []);
 
     const isEnded = now > new Date(event.end).getTime();
     const canJoin = (new Date(event.start).getTime() - now) < WAITING_TIME;

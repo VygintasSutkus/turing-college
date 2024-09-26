@@ -1,4 +1,4 @@
-import {useCallback, useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 
 import styles from './App.module.scss';
 import {MeetingCategory, ReviewState} from "./types.ts";
@@ -31,29 +31,28 @@ export const App = () => {
     const [events, setEvents] = useState<Event[]>([])
     const [selectedId, setSelectedId] = useState<number | undefined>(undefined)
 
-    const getSortedEvents = useCallback(
-        (events: Event[]) => events.sort((a, b) => {
+    const getSortedEvents = (events: Event[]) => {
+        return events.sort((a, b) => {
             const aStart = new Date(a.start);
             const bStart = new Date(b.start);
             return aStart.getTime() - bStart.getTime()
-        }),
-        []
-    );
-
-    const fetchEvents = useCallback(() => {
-        Promise.all([fetch('./meetings.json'), fetch('./reviews.json')])
-            .then( ([res1, res2]) => {
-                return Promise.all([res1.json(), res2.json()])
-            })
-            .then( ([meetingsJSON, reviewsJSON]) => {
-                const events = [...meetingsJSON, ...reviewsJSON];
-                const sortedEvents = getSortedEvents(events)
-                setEvents(sortedEvents)
-            })
-            .catch((e) => console.warn(e))
-    }, [getSortedEvents])
+        })
+    };
 
     useEffect(() => {
+        const fetchEvents = () => {
+            Promise.all([fetch('./meetings.json'), fetch('./reviews.json')])
+                .then( ([res1, res2]) => {
+                    return Promise.all([res1.json(), res2.json()])
+                })
+                .then( ([meetingsJSON, reviewsJSON]) => {
+                    const events = [...meetingsJSON, ...reviewsJSON];
+                    const sortedEvents = getSortedEvents(events)
+                    setEvents(sortedEvents)
+                })
+                .catch((e) => console.warn(e))
+        };
+
         fetchEvents();
 
         let interval = null;
@@ -62,7 +61,7 @@ export const App = () => {
         }, 1000 * 60 * 5);
 
         return () => clearInterval(interval);
-    }, [fetchEvents]);
+    }, []);
 
     const selectEventHandler = (eventId: number) => {
         setSelectedId(eventId)
